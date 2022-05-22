@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post("submit", function(Request $request){
+
+    return redirect()->back()->with(["message" => "hi"]);
+
+});
