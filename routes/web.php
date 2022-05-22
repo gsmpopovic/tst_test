@@ -22,3 +22,11 @@ Route::post("submit", function(Request $request){
     return redirect()->back()->with(["message" => "hi"]);
 
 });
+
+Route::get('ajax', function () {
+
+    $response = ['status' => 200, 'body' => "response"];
+
+    return "hi";
+
+});

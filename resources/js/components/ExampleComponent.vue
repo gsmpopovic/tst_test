@@ -4,10 +4,12 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Example Component</div>
+{{message}}
+<button @click="ajax">click me to send an ajax request</button>
 
                     <div class="card-body">
                         <form action="submit" method="post">
-        <input type="hidden" name="_token" v-bind:value="csrf">
+                            <input type="hidden" name="_token" v-bind:value="csrf">
                             <input type="submit" name="submit">
                         </form>
                     </div>
@@ -28,9 +30,13 @@
     }
   },
   methods: {
-    //   click(){
-    //       this.count++;
-    //   }
+      ajax(){
+              axios
+                .get('ajax')
+                .then(response => 
+                (this.message = response)
+                )
+      }
   },
         mounted() {
             console.log('Component mounted.')
